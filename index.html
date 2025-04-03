@@ -50,11 +50,18 @@
           update_top('map') 
         }
       }
-    });
+    })
     function update_top(kind) {
       globalThis.location = `#Top`
-      const dots = model_to_dots(localStorage.getItem('gs_map_Top')).dots
-      gsdot_svg(dots['Top'], 'default', kind).then(svg=>localStorage.setItem('svg_content',svg))
+      const cur_map=localStorage.getItem('gs_map_Top') || ':: level\nTop' 
+      const dots = model_to_dots(cur_map).dots
+      if (cur_map==':: level\nTop' && kind=='map'){
+         document.getElementById("map").innerHTML=`There is no existing map. Click
+         <a href="https://bsky.app/profile/noidentity.dev" title="Information about this site">ℹ️</a> for information about this site.`
+      }
+      else{
+        gsdot_svg(dots['Top'], 'default', kind).then(svg=>localStorage.setItem('svg_content',svg))
+      }
     }
     document.getElementById("save").addEventListener("click", (e) => {
       if (document.getElementById("map").style.display == 'block'|| document.getElementById("key").style.display == ''){
