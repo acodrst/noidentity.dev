@@ -1,1 +1,2 @@
-This is a demonstration of modifying a live data and material flow map by feeding Graph Stack Format text triples via Bluesky's AT Protocol and Jetstream 
+This is a demonstration of modifying a live data and material flow map with MQTT
+streams
