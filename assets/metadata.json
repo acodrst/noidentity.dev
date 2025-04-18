@@ -1,0 +1,6 @@
+{
+    "noidentity.dev": {
+      "title": "Streaming Logical Map POC",
+      "description":"Rather than identity, this site leads with a combined material and data flow logical map, using MQTT to stream collaborative updates"
+    }
+}
